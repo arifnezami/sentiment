@@ -30,7 +30,7 @@ def preprocess_text(text):
     text = re.sub(r'([!?.]){2,}', r'\1', text)
     return text
 
-csv_file = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRFVaLgFhrLZ4xsRpUFj_bXtuzqznNT8RIF5ZuqUNaxU94_bUXVml89lY3Kd8P8DsT9J85Uo_UvfExf/pub?gid=314125647&single=true&output=csv"
+csv_file = "/content/dataset.csv"
 df = pd.read_csv(csv_file)
 df["comment_text"] = df["comment_text"].fillna("").apply(preprocess_text)
 
